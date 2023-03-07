@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template_string
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 @app.route('/')
 def index():
@@ -27,4 +27,4 @@ button_input.onclick = function(event) {
 ''')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
